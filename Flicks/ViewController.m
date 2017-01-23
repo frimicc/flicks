@@ -60,7 +60,7 @@
                                                     [NSJSONSerialization JSONObjectWithData:data
                                                                                     options:kNilOptions
                                                                                       error:&jsonError];
-                                                   // NSLog(@"Response: %@", responseDictionary);
+                                                    NSLog(@"Response: %@", responseDictionary);
 
                                                     NSArray *results = responseDictionary[@"results"];
                                                     NSMutableArray *models = [NSMutableArray array];
@@ -91,7 +91,7 @@
 
     [cell.titleLabel setText:model.movieTitle];
     [cell.overviewLabel setText:model.movieDescription];
-    [cell.posterImage setImage:[UIImage imageNamed:@"YahooIcon.png"]];
+    [cell.posterImage setImageWithURL:model.posterURL];
 
     return cell;
 }
