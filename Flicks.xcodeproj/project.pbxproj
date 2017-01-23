@@ -16,9 +16,13 @@
 		6636DA4A1E368C4C0053BB67 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA491E368C4C0053BB67 /* MovieCell.m */; };
 		6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA4B1E368DBB0053BB67 /* YahooIcon.png */; };
 		6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA4E1E36AEDF0053BB67 /* MovieModel.m */; };
+		CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049A4CA41AAD35A918584F3D /* Pods-Flicks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.debug.xcconfig"; sourceTree = "<group>"; };
+		1B31CA6EC3AB0507583089A1 /* Pods-Flicks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.release.xcconfig"; sourceTree = "<group>"; };
+		5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flicks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6636DA271E3683DB0053BB67 /* Flicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6636DA2B1E3683DB0053BB67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6636DA2D1E3683DB0053BB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BE3F64171AB77FDED8C8995 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6636DA1E1E3683DB0053BB67 = {
 			isa = PBXGroup;
 			children = (
 				6636DA291E3683DB0053BB67 /* Flicks */,
 				6636DA281E3683DB0053BB67 /* Products */,
+				9D5CD49A2E6BA7E9E1F3D108 /* Pods */,
+				0BE3F64171AB77FDED8C8995 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +107,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9D5CD49A2E6BA7E9E1F3D108 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				049A4CA41AAD35A918584F3D /* Pods-Flicks.debug.xcconfig */,
+				1B31CA6EC3AB0507583089A1 /* Pods-Flicks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6636DA3E1E3683DB0053BB67 /* Build configuration list for PBXNativeTarget "Flicks" */;
 			buildPhases = (
+				CEA09A7E62E2CA1CD0E4B999 /* [CP] Check Pods Manifest.lock */,
 				6636DA231E3683DB0053BB67 /* Sources */,
 				6636DA241E3683DB0053BB67 /* Frameworks */,
 				6636DA251E3683DB0053BB67 /* Resources */,
+				FEAF79BA3FEFAE39326CCF4E /* [CP] Embed Pods Frameworks */,
+				5D0DF69251D7BAAFAF8B9C18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +186,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D0DF69251D7BAAFAF8B9C18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicks/Pods-Flicks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEA09A7E62E2CA1CD0E4B999 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEAF79BA3FEFAE39326CCF4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicks/Pods-Flicks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6636DA231E3683DB0053BB67 /* Sources */ = {
@@ -287,6 +362,7 @@
 		};
 		6636DA3F1E3683DB0053BB67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 049A4CA41AAD35A918584F3D /* Pods-Flicks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L9W59AG4Z6;
@@ -299,6 +375,7 @@
 		};
 		6636DA401E3683DB0053BB67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B31CA6EC3AB0507583089A1 /* Pods-Flicks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L9W59AG4Z6;

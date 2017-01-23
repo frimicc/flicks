@@ -65,8 +65,6 @@
                                                     for (NSDictionary *result in results) {
                                                         MovieModel *model = [[MovieModel alloc] initWithDictionary:result];
                                                         [models addObject:model];
-
-                                                        // NSLog(@"Model - %@", model);
                                                     }
                                                     self.movies = models;
                                                     [self.movieTableView reloadData]; // build the table again, now that we have data
@@ -92,8 +90,6 @@
     [cell.titleLabel setText:model.movieTitle];
     [cell.overviewLabel setText:model.movieDescription];
     [cell.posterImage setImage:[UIImage imageNamed:@"YahooIcon.png"]];
-
-    NSLog(@"row number = %ld", indexPath.row);
 
     return cell;
 }
