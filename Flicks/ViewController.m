@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "MovieCell.h"
 #import "MovieModel.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
 
 @interface ViewController () <UITableViewDataSource>
 
