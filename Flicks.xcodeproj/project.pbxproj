@@ -13,6 +13,9 @@
 		6636DA351E3683DB0053BB67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA331E3683DB0053BB67 /* Main.storyboard */; };
 		6636DA371E3683DB0053BB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA361E3683DB0053BB67 /* Assets.xcassets */; };
 		6636DA3A1E3683DB0053BB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA381E3683DB0053BB67 /* LaunchScreen.storyboard */; };
+		6636DA4A1E368C4C0053BB67 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA491E368C4C0053BB67 /* MovieCell.m */; };
+		6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA4B1E368DBB0053BB67 /* YahooIcon.png */; };
+		6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA4E1E36AEDF0053BB67 /* MovieModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		6636DA361E3683DB0053BB67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6636DA391E3683DB0053BB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6636DA3B1E3683DB0053BB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6636DA481E368C4C0053BB67 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		6636DA491E368C4C0053BB67 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		6636DA4B1E368DBB0053BB67 /* YahooIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YahooIcon.png; sourceTree = "<group>"; };
+		6636DA4D1E36AEDF0053BB67 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
+		6636DA4E1E36AEDF0053BB67 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +74,12 @@
 				6636DA361E3683DB0053BB67 /* Assets.xcassets */,
 				6636DA381E3683DB0053BB67 /* LaunchScreen.storyboard */,
 				6636DA3B1E3683DB0053BB67 /* Info.plist */,
+				6636DA4B1E368DBB0053BB67 /* YahooIcon.png */,
 				6636DA2A1E3683DB0053BB67 /* Supporting Files */,
+				6636DA481E368C4C0053BB67 /* MovieCell.h */,
+				6636DA491E368C4C0053BB67 /* MovieCell.m */,
+				6636DA4D1E36AEDF0053BB67 /* MovieModel.h */,
+				6636DA4E1E36AEDF0053BB67 /* MovieModel.m */,
 			);
 			path = Flicks;
 			sourceTree = "<group>";
@@ -139,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6636DA3A1E3683DB0053BB67 /* LaunchScreen.storyboard in Resources */,
+				6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */,
 				6636DA371E3683DB0053BB67 /* Assets.xcassets in Resources */,
 				6636DA351E3683DB0053BB67 /* Main.storyboard in Resources */,
 			);
@@ -152,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6636DA321E3683DB0053BB67 /* ViewController.m in Sources */,
+				6636DA4A1E368C4C0053BB67 /* MovieCell.m in Sources */,
 				6636DA2F1E3683DB0053BB67 /* AppDelegate.m in Sources */,
+				6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */,
 				6636DA2C1E3683DB0053BB67 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +328,7 @@
 				6636DA401E3683DB0053BB67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
