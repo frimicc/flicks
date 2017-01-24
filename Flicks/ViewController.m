@@ -26,8 +26,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.movieTableView.dataSource = self;
-    [self fetchMovies];
+
+    if ([self.restorationIdentifier isEqualToString:@"top_rated"]) {
+        self.listType = @"top";
+    } else {
+        self.listType = @"now";
+    }
     
+    [self fetchMovies]; 
 }
 
 
@@ -41,6 +47,11 @@
     NSString *apiKey = @"a07e22bc18f5cb106bfe4cc1f83ad8ed";
     NSString *urlString =
     [@"https://api.themoviedb.org/3/movie/now_playing?api_key=" stringByAppendingString:apiKey];
+
+    if ([self.listType isEqual: @"top"]) {
+        urlString =
+        [@"https://api.themoviedb.org/3/movie/top_rated?api_key=" stringByAppendingString:apiKey];
+    }
 
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
