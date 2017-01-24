@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MovieCell.h"
 #import "MovieModel.h"
+#import "DetailViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 
@@ -87,6 +88,22 @@
                                             }];
     [task resume];
 
+}
+
+// segues
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"show_detail"])
+    {
+        // get selected movie model
+        NSIndexPath *indexPath = [self.movieTableView indexPathForCell:sender];
+        MovieModel *model = [self.movies objectAtIndex:indexPath.row];
+
+        // Get reference to the destination view controller
+        DetailViewController *vc = [segue destinationViewController];
+
+        // tell destination about the selected movie
+        [vc setMovie:model];
+    }
 }
 
 // data source

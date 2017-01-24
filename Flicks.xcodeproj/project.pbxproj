@@ -16,6 +16,7 @@
 		6636DA4A1E368C4C0053BB67 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA491E368C4C0053BB67 /* MovieCell.m */; };
 		6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA4B1E368DBB0053BB67 /* YahooIcon.png */; };
 		6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA4E1E36AEDF0053BB67 /* MovieModel.m */; };
+		6636DA551E37DF930053BB67 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA541E37DF930053BB67 /* DetailViewController.m */; };
 		CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		6636DA4B1E368DBB0053BB67 /* YahooIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YahooIcon.png; sourceTree = "<group>"; };
 		6636DA4D1E36AEDF0053BB67 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
 		6636DA4E1E36AEDF0053BB67 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
+		6636DA531E37DF930053BB67 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		6636DA541E37DF930053BB67 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				6636DA491E368C4C0053BB67 /* MovieCell.m */,
 				6636DA4D1E36AEDF0053BB67 /* MovieModel.h */,
 				6636DA4E1E36AEDF0053BB67 /* MovieModel.m */,
+				6636DA531E37DF930053BB67 /* DetailViewController.h */,
+				6636DA541E37DF930053BB67 /* DetailViewController.m */,
 			);
 			path = Flicks;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				6636DA2F1E3683DB0053BB67 /* AppDelegate.m in Sources */,
 				6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */,
 				6636DA2C1E3683DB0053BB67 /* main.m in Sources */,
+				6636DA551E37DF930053BB67 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
