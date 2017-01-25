@@ -19,10 +19,12 @@
 @property (nonatomic, strong) NSArray<MovieModel *> *movies;
 @property (weak, nonatomic) IBOutlet UIView *errorMessageView;
 
+
 @end
 
 @implementation ViewController
 
+UIRefreshControl *refreshControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +36,11 @@
     } else {
         self.listType = @"now";
     }
-    
+
+    refreshControl = [[UIRefreshControl alloc] init];
+    [self.movieTableView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+
     [self fetchMovies];
 }
 
@@ -88,6 +94,7 @@
                                                     }
                                                     self.movies = models;
                                                     [self.movieTableView reloadData]; // build the table again, now that we have data
+                                                    [refreshControl endRefreshing];
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
                                                     self.errorMessageView.hidden = NO;
