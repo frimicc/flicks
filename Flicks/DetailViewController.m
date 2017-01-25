@@ -11,6 +11,7 @@
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIView *cardView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollContents;
 @property (weak, nonatomic) IBOutlet UILabel *movieTitle;
 @property (weak, nonatomic) IBOutlet UILabel *movieDescription;
@@ -27,6 +28,18 @@
     self.movieTitle.text = self.movie.movieTitle;
     self.movieDescription.text = self.movie.movieDescription;
     [self.backgroundImage setImageWithURL:self.movie.backgroundURL];
+
+    self.movieTitle.textColor = [UIColor whiteColor];
+    self.movieDescription.textColor = [UIColor whiteColor];
+    [self.movieDescription sizeToFit];
+
+    self.cardView.backgroundColor = [UIColor darkGrayColor];
+    [self.cardView sizeToFit];
+
+    CGFloat scrollerHeight = CGRectGetHeight(self.cardView.bounds);
+    self.scrollContents.contentInset = UIEdgeInsetsMake(scrollerHeight, 0, 0, 0);
+    self.scrollContents.contentSize = CGSizeMake(self.scrollContents.bounds.size.width, scrollerHeight);
+    self.scrollContents.frame = CGRectMake(24, (self.view.bounds.size.height - scrollerHeight), self.scrollContents.bounds.size.width, scrollerHeight);
 
 }
 
