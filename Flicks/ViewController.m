@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *movieTableView;
 @property (nonatomic, strong) NSArray<MovieModel *> *movies;
+@property (weak, nonatomic) IBOutlet UIView *errorMessageView;
 
 @end
 
@@ -34,7 +35,7 @@
         self.listType = @"now";
     }
     
-    [self fetchMovies]; 
+    [self fetchMovies];
 }
 
 
@@ -69,6 +70,9 @@
                                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
 
                                                 if (!error) {
+                                                    self.errorMessageView.hidden = YES;
+                                                    [self.view sendSubviewToBack:self.errorMessageView];
+                                                    
                                                     NSError *jsonError = nil;
                                                     NSDictionary *responseDictionary =
                                                     [NSJSONSerialization JSONObjectWithData:data
@@ -86,6 +90,8 @@
                                                     [self.movieTableView reloadData]; // build the table again, now that we have data
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
+                                                    self.errorMessageView.hidden = NO;
+                                                    [self.view bringSubviewToFront:self.errorMessageView];
                                                 }
                                             }];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

@@ -19,6 +19,7 @@
 		6636DA551E37DF930053BB67 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA541E37DF930053BB67 /* DetailViewController.m */; };
 		6636DA571E39534E0053BB67 /* movie@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA561E39534E0053BB67 /* movie@2x.jpg */; };
 		6636DA591E39542C0053BB67 /* movie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA581E39542C0053BB67 /* movie.jpg */; };
+		6636DA5B1E3957DF0053BB67 /* post_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */; };
 		CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6636DA541E37DF930053BB67 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6636DA561E39534E0053BB67 /* movie@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "movie@2x.jpg"; sourceTree = "<group>"; };
 		6636DA581E39542C0053BB67 /* movie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie.jpg; sourceTree = "<group>"; };
+		6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_warning@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				6636DA331E3683DB0053BB67 /* Main.storyboard */,
 				6636DA361E3683DB0053BB67 /* Assets.xcassets */,
 				6636DA381E3683DB0053BB67 /* LaunchScreen.storyboard */,
+				6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */,
 				6636DA581E39542C0053BB67 /* movie.jpg */,
 				6636DA561E39534E0053BB67 /* movie@2x.jpg */,
 				6636DA3B1E3683DB0053BB67 /* Info.plist */,
@@ -195,6 +198,7 @@
 				6636DA351E3683DB0053BB67 /* Main.storyboard in Resources */,
 				6636DA571E39534E0053BB67 /* movie@2x.jpg in Resources */,
 				6636DA591E39542C0053BB67 /* movie.jpg in Resources */,
+				6636DA5B1E3957DF0053BB67 /* post_warning@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
