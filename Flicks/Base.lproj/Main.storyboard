@@ -58,7 +58,7 @@
                                             <outlet property="overviewLabel" destination="nmE-Os-omN" id="XF2-S9-xLr"/>
                                             <outlet property="posterImage" destination="PGX-n8-0jD" id="xPN-sN-mpk"/>
                                             <outlet property="titleLabel" destination="Q0b-ed-OHS" id="KxD-h9-bIr"/>
-                                            <segue destination="obe-c4-Tnr" kind="show" id="C8i-OY-2gX"/>
+                                            <segue destination="obe-c4-Tnr" kind="show" identifier="show_detail" id="C8i-OY-2gX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

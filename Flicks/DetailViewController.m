@@ -37,9 +37,10 @@
     [self.cardView sizeToFit];
 
     CGFloat scrollerHeight = CGRectGetHeight(self.cardView.bounds);
+    CGFloat scrollerYFromBottom = self.view.bounds.size.height - scrollerHeight - 10;
     self.scrollContents.contentInset = UIEdgeInsetsMake(scrollerHeight, 0, 0, 0);
     self.scrollContents.contentSize = CGSizeMake(self.scrollContents.bounds.size.width, scrollerHeight);
-    self.scrollContents.frame = CGRectMake(24, (self.view.bounds.size.height - scrollerHeight), self.scrollContents.bounds.size.width, scrollerHeight);
+    self.scrollContents.frame = CGRectMake(24, scrollerYFromBottom, self.scrollContents.bounds.size.width, scrollerHeight);
 
 }
 
