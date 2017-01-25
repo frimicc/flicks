@@ -260,7 +260,7 @@
         <scene sceneID="9IY-by-JEu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cau-aW-LX9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" image="movie.jpg" id="u0K-sA-Mct"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="movie.png" id="u0K-sA-Mct"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYR-5A-g6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -296,7 +296,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="movie.jpg" width="30" height="30"/>
+        <image name="movie.png" width="32" height="32"/>
         <image name="post_warning.png" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -17,9 +17,8 @@
 		6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA4B1E368DBB0053BB67 /* YahooIcon.png */; };
 		6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA4E1E36AEDF0053BB67 /* MovieModel.m */; };
 		6636DA551E37DF930053BB67 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6636DA541E37DF930053BB67 /* DetailViewController.m */; };
-		6636DA571E39534E0053BB67 /* movie@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA561E39534E0053BB67 /* movie@2x.jpg */; };
-		6636DA591E39542C0053BB67 /* movie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA581E39542C0053BB67 /* movie.jpg */; };
 		6636DA5B1E3957DF0053BB67 /* post_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */; };
+		668A60081E396D71003142C0 /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 668A60071E396D71003142C0 /* movie.png */; };
 		CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +43,8 @@
 		6636DA4E1E36AEDF0053BB67 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieModel.m; sourceTree = "<group>"; };
 		6636DA531E37DF930053BB67 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6636DA541E37DF930053BB67 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		6636DA561E39534E0053BB67 /* movie@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "movie@2x.jpg"; sourceTree = "<group>"; };
-		6636DA581E39542C0053BB67 /* movie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie.jpg; sourceTree = "<group>"; };
 		6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_warning@2x.png"; sourceTree = "<group>"; };
+		668A60071E396D71003142C0 /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +96,7 @@
 				6636DA361E3683DB0053BB67 /* Assets.xcassets */,
 				6636DA381E3683DB0053BB67 /* LaunchScreen.storyboard */,
 				6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */,
-				6636DA581E39542C0053BB67 /* movie.jpg */,
-				6636DA561E39534E0053BB67 /* movie@2x.jpg */,
+				668A60071E396D71003142C0 /* movie.png */,
 				6636DA3B1E3683DB0053BB67 /* Info.plist */,
 				6636DA4B1E368DBB0053BB67 /* YahooIcon.png */,
 				6636DA2A1E3683DB0053BB67 /* Supporting Files */,
@@ -192,12 +189,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668A60081E396D71003142C0 /* movie.png in Resources */,
 				6636DA3A1E3683DB0053BB67 /* LaunchScreen.storyboard in Resources */,
 				6636DA4C1E368DBB0053BB67 /* YahooIcon.png in Resources */,
 				6636DA371E3683DB0053BB67 /* Assets.xcassets in Resources */,
 				6636DA351E3683DB0053BB67 /* Main.storyboard in Resources */,
-				6636DA571E39534E0053BB67 /* movie@2x.jpg in Resources */,
-				6636DA591E39542C0053BB67 /* movie.jpg in Resources */,
 				6636DA5B1E3957DF0053BB67 /* post_warning@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
