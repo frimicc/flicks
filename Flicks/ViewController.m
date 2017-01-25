@@ -11,7 +11,7 @@
 #import "MovieModel.h"
 #import "DetailViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
-
+#import <MBProgressHUD.h>
 
 @interface ViewController () <UITableViewDataSource>
 
@@ -66,6 +66,8 @@
                                             completionHandler:^(NSData * _Nullable data,
                                                                 NSURLResponse * _Nullable response,
                                                                 NSError * _Nullable error) {
+                                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+
                                                 if (!error) {
                                                     NSError *jsonError = nil;
                                                     NSDictionary *responseDictionary =
@@ -86,6 +88,7 @@
                                                     NSLog(@"An error occurred: %@", error.description);
                                                 }
                                             }];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [task resume];
 
 }
