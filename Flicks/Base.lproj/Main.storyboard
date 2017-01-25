@@ -205,6 +205,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6v7-qp-AWu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="I81-nb-VKo">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -221,7 +222,7 @@
         <scene sceneID="9IY-by-JEu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cau-aW-LX9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="u0K-sA-Mct"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="movie.jpg" id="u0K-sA-Mct"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYR-5A-g6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -236,11 +237,11 @@
             </objects>
             <point key="canvasLocation" x="1113.75" y="122.53521126760563"/>
         </scene>
-        <!--Top Rated-->
+        <!--Navigation Controller-->
         <scene sceneID="FY6-rX-t9j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hch-cM-Vxj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Top Rated" id="PM1-9B-lYg"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="PM1-9B-lYg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q2D-rC-qSI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -256,6 +257,9 @@
             <point key="canvasLocation" x="1155" y="883"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movie.jpg" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C8i-OY-2gX"/>
     </inferredMetricsTieBreakers>
