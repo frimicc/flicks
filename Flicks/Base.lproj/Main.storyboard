@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="m8c-27-8h5"/>
                         <viewControllerLayoutGuide type="bottom" id="Xvf-sj-pND"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="hFr-Na-HII">
+                    <view key="view" contentMode="scaleToFill" id="hFr-Na-HII">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -85,8 +85,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Top Rated" id="CuD-z4-p0R"/>
+                    <navigationItem key="navigationItem" title="Top Rated" id="CuD-z4-p0R">
+                        <barButtonItem key="rightBarButtonItem" id="8s8-5A-wSq">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="IWo-C5-AL7">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="list"/>
+                                    <segment title="grid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="choseNewView:" destination="kDk-Or-byu" eventType="valueChanged" id="fTN-qo-kFd"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="chooseViewControl" destination="IWo-C5-AL7" id="6Bq-9S-9ms"/>
                         <outlet property="errorMessageView" destination="gIo-nE-kI4" id="XfH-hx-mbv"/>
                         <outlet property="movieTableView" destination="qc2-6Q-zRk" id="DJa-Rw-JJ8"/>
                     </connections>
@@ -103,7 +118,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -172,7 +187,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Now Playing" id="TOu-Gg-acC">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="PsF-ge-iak">
+                        <barButtonItem key="rightBarButtonItem" id="PsF-ge-iak">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="s3w-vj-EQU">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -317,6 +332,6 @@
         <image name="post_warning.png" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mmn-sb-FKk"/>
+        <segue reference="C8i-OY-2gX"/>
     </inferredMetricsTieBreakers>
 </document>

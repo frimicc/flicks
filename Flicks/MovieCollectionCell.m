@@ -31,7 +31,7 @@
 }
 
 - (void) reloadData {
-    [self.posterImage setImageWithURL:self.model.posterURL];
+    [self.posterImage setImageWithURL:self.model.backgroundURL];
     [self setNeedsLayout]; // forces layoutSubviews to be called
 }
 

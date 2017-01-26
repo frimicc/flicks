@@ -206,7 +206,7 @@ UIRefreshControl *refreshControl;
 
     [cell.titleLabel setText:model.movieTitle];
     [cell.overviewLabel setText:model.movieDescription];
-    [cell.posterImage setImageWithURL:model.posterURL];
+    [cell.posterImage setImageWithURL:model.backgroundURL];
 
     return cell;
 }
