@@ -8,16 +8,21 @@
 
 #import "ViewController.h"
 #import "MovieCell.h"
+#import "MovieCollectionCell.h"
 #import "MovieModel.h"
 #import "DetailViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MBProgressHUD.h>
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *movieTableView;
 @property (nonatomic, strong) NSArray<MovieModel *> *movies;
 @property (weak, nonatomic) IBOutlet UIView *errorMessageView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *chooseViewControl;
+
+//@property (weak, nonatomic) IBOutlet UICollectionView *movieCollectionView;
+@property (strong, nonatomic) UICollectionView *movieCollectionView;
 
 
 @end
@@ -28,7 +33,9 @@ UIRefreshControl *refreshControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     self.movieTableView.dataSource = self;
 
     if ([self.restorationIdentifier isEqualToString:@"top_rated"]) {
@@ -38,8 +45,28 @@ UIRefreshControl *refreshControl;
     }
 
     refreshControl = [[UIRefreshControl alloc] init];
-    [self.movieTableView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.movieTableView addSubview:refreshControl];
+    [self.movieCollectionView addSubview:refreshControl];
+
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    CGFloat screenWidth = CGRectGetWidth(self.view.bounds);
+    CGFloat itemWidth = screenWidth / 3; // 90
+    CGFloat itemHeight = 136 * (itemWidth / 90); // 136
+
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+
+    UICollectionView *movieCollection = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    [movieCollection registerClass:[MovieCollectionCell class] forCellWithReuseIdentifier:@"movieCollCell"];
+
+    [self.view addSubview:movieCollection];
+    movieCollection.hidden = YES;
+    movieCollection.dataSource = self;
+    movieCollection.delegate = self;
+    self.movieCollectionView = movieCollection;
 
     [self fetchMovies];
 }
@@ -93,17 +120,45 @@ UIRefreshControl *refreshControl;
                                                         [models addObject:model];
                                                     }
                                                     self.movies = models;
-                                                    [self.movieTableView reloadData]; // build the table again, now that we have data
-                                                    [refreshControl endRefreshing];
+                                                    [self.movieTableView reloadData];
+                                                    [self.movieCollectionView reloadData];
                                                 } else {
                                                     NSLog(@"An error occurred: %@", error.description);
                                                     self.errorMessageView.hidden = NO;
                                                     [self.view bringSubviewToFront:self.errorMessageView];
                                                 }
+                                                [refreshControl endRefreshing];
                                             }];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [task resume];
 
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.movieCollectionView.frame = self.view.bounds;
+}
+
+// make segment controller work
+- (IBAction)choseNewView:(id)sender {
+    NSInteger selectedSegment = self.chooseViewControl.selectedSegmentIndex;
+    switch (selectedSegment ) {
+        case 0:
+            // list
+            self.movieCollectionView.hidden = YES;
+            self.movieTableView.hidden = NO;
+            break;
+
+        case 1:
+            // grid
+            self.movieCollectionView.hidden = NO;
+            self.movieTableView.hidden = YES;
+            break;
+
+        default:
+            break;
+    }
 }
 
 // segues
@@ -111,7 +166,23 @@ UIRefreshControl *refreshControl;
     if ([[segue identifier] isEqualToString:@"show_detail"])
     {
         // get selected movie model
-        NSIndexPath *indexPath = [self.movieTableView indexPathForCell:sender];
+        NSIndexPath *indexPath;
+        NSInteger selectedSegment = self.chooseViewControl.selectedSegmentIndex;
+        switch (selectedSegment ) {
+            case 0:
+                // list
+                indexPath = [self.movieTableView indexPathForCell:sender];
+                break;
+
+            case 1:
+                // grid
+                indexPath = [self.movieCollectionView indexPathForCell:sender];
+                break;
+                
+            default:
+                break;
+        }
+
         MovieModel *model = [self.movies objectAtIndex:indexPath.row];
 
         // Get reference to the destination view controller
@@ -122,7 +193,7 @@ UIRefreshControl *refreshControl;
     }
 }
 
-// data source
+#pragma mark table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.movies.count;
 }
@@ -138,6 +209,27 @@ UIRefreshControl *refreshControl;
     [cell.posterImage setImageWithURL:model.posterURL];
 
     return cell;
+}
+
+#pragma mark collection view data source
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.movies.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MovieCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"movieCollCell" forIndexPath:indexPath];
+
+    MovieModel *model = [self.movies objectAtIndex:indexPath.item];
+    cell.model = model;
+    [cell reloadData];
+    
+    return cell;
+}
+
+#pragma mark collection view delegate
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"show_detail" sender:[collectionView cellForItemAtIndexPath:indexPath]];
 }
 
 @end
