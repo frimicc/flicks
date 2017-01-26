@@ -20,6 +20,7 @@
 		6636DA5B1E3957DF0053BB67 /* post_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6636DA5A1E3957DF0053BB67 /* post_warning@2x.png */; };
 		668A60081E396D71003142C0 /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 668A60071E396D71003142C0 /* movie.png */; };
 		668A600B1E397477003142C0 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A600A1E397477003142C0 /* MovieCollectionCell.m */; };
+		668A600E1E3AB5C5003142C0 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A600D1E3AB5C5003142C0 /* ImageHelper.m */; };
 		CC9BDB2CC6B6B2AC76E64BD6 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F311DD95F34CD90C7A74ACD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		668A60071E396D71003142C0 /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
 		668A60091E397477003142C0 /* MovieCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionCell.h; sourceTree = "<group>"; };
 		668A600A1E397477003142C0 /* MovieCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionCell.m; sourceTree = "<group>"; };
+		668A600C1E3AB5C5003142C0 /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
+		668A600D1E3AB5C5003142C0 /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				6636DA541E37DF930053BB67 /* DetailViewController.m */,
 				668A60091E397477003142C0 /* MovieCollectionCell.h */,
 				668A600A1E397477003142C0 /* MovieCollectionCell.m */,
+				668A600C1E3AB5C5003142C0 /* ImageHelper.h */,
+				668A600D1E3AB5C5003142C0 /* ImageHelper.m */,
 			);
 			path = Flicks;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				6636DA321E3683DB0053BB67 /* ViewController.m in Sources */,
 				6636DA4A1E368C4C0053BB67 /* MovieCell.m in Sources */,
 				6636DA2F1E3683DB0053BB67 /* AppDelegate.m in Sources */,
+				668A600E1E3AB5C5003142C0 /* ImageHelper.m in Sources */,
 				668A600B1E397477003142C0 /* MovieCollectionCell.m in Sources */,
 				6636DA4F1E36AEDF0053BB67 /* MovieModel.m in Sources */,
 				6636DA2C1E3683DB0053BB67 /* main.m in Sources */,

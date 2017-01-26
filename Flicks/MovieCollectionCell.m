@@ -8,6 +8,7 @@
 
 #import "MovieCollectionCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "ImageHelper.h"
 
 @interface MovieCollectionCell ()
 
@@ -25,13 +26,12 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         [self.contentView addSubview:imageView];
         self.posterImage = imageView;
-
     }
     return self;
 }
 
 - (void) reloadData {
-    [self.posterImage setImageWithURL:self.model.backgroundURL];
+    [ImageHelper loadImageWithPlaceholder:self.posterImage small:self.model.posterURL large:self.model.backgroundURL];
     [self setNeedsLayout]; // forces layoutSubviews to be called
 }
 

@@ -8,6 +8,7 @@
 
 #import "MovieCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "ImageHelper.h"
 
 @interface MovieCell ()
 
@@ -23,8 +24,7 @@
 - (void) reloadData {
     [self.titleLabel setText:self.model.movieTitle];
     [self.overviewLabel setText:self.model.movieDescription];
-    [self.posterImage setImageWithURL:self.model.backgroundURL];
-
+    [ImageHelper loadImageWithPlaceholder:self.posterImage small:self.model.posterURL large:self.model.backgroundURL];
 }
 
 - (void)awakeFromNib {

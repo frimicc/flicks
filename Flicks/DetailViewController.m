@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "ImageHelper.h"
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
@@ -27,7 +28,7 @@
     NSLog(@"%@", self.movie);
     self.movieTitle.text = self.movie.movieTitle;
     self.movieDescription.text = self.movie.movieDescription;
-    [self.backgroundImage setImageWithURL:self.movie.backgroundURL];
+    [ImageHelper loadImageWithPlaceholder:self.backgroundImage small:self.movie.posterURL large:self.movie.backgroundURL];
 
     self.movieTitle.textColor = [UIColor whiteColor];
     self.movieDescription.textColor = [UIColor whiteColor];
