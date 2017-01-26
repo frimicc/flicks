@@ -203,10 +203,8 @@ UIRefreshControl *refreshControl;
     MovieCell* cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell"];
 
     MovieModel *model = [self.movies objectAtIndex:indexPath.row];
-
-    [cell.titleLabel setText:model.movieTitle];
-    [cell.overviewLabel setText:model.movieDescription];
-    [cell.posterImage setImageWithURL:model.backgroundURL];
+    cell.model = model;
+    [cell reloadData];
 
     return cell;
 }

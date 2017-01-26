@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieModel.h"
 
 @interface MovieCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *overviewLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *posterImage;
+
+@property (nonatomic, strong) MovieModel *model;
+- (void) reloadData;
 
 @end
