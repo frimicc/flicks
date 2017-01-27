@@ -13,6 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, strong) NSString *movieTitle;
+@property (nonatomic, strong) NSString *searchTitle;
 @property (nonatomic, strong) NSString *movieDescription;
 @property (nonatomic, strong) NSURL *posterURL;
 @property (nonatomic, strong) NSURL *backgroundURL;

@@ -14,14 +14,15 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MBProgressHUD.h>
 
-@interface ViewController () <UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ViewController () <UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *movieTableView;
 @property (nonatomic, strong) NSArray<MovieModel *> *movies;
+@property (nonatomic, strong) NSArray<MovieModel *> *filteredMovies;
 @property (weak, nonatomic) IBOutlet UIView *errorMessageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *chooseViewControl;
+@property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
 
-//@property (weak, nonatomic) IBOutlet UICollectionView *movieCollectionView;
 @property (strong, nonatomic) UICollectionView *movieCollectionView;
 
 
@@ -59,7 +60,7 @@ UIRefreshControl *refreshControl;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
 
-    UICollectionView *movieCollection = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    UICollectionView *movieCollection = [[UICollectionView alloc] initWithFrame:self.movieTableView.frame collectionViewLayout:layout];
     [movieCollection registerClass:[MovieCollectionCell class] forCellWithReuseIdentifier:@"movieCollCell"];
 
     [self.view addSubview:movieCollection];
@@ -67,6 +68,9 @@ UIRefreshControl *refreshControl;
     movieCollection.dataSource = self;
     movieCollection.delegate = self;
     self.movieCollectionView = movieCollection;
+
+    self.movieSearchBar.delegate = self;
+    self.filteredMovies = self.movies;
 
     [self fetchMovies];
 }
@@ -120,6 +124,7 @@ UIRefreshControl *refreshControl;
                                                         [models addObject:model];
                                                     }
                                                     self.movies = models;
+                                                    self.filteredMovies = self.movies;
                                                     [self.movieTableView reloadData];
                                                     [self.movieCollectionView reloadData];
                                                 } else {
@@ -183,7 +188,7 @@ UIRefreshControl *refreshControl;
                 break;
         }
 
-        MovieModel *model = [self.movies objectAtIndex:indexPath.row];
+        MovieModel *model = [self.filteredMovies objectAtIndex:indexPath.row];
 
         // Get reference to the destination view controller
         DetailViewController *vc = [segue destinationViewController];
@@ -195,14 +200,14 @@ UIRefreshControl *refreshControl;
 
 #pragma mark table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
+    return self.filteredMovies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     MovieCell* cell = [tableView dequeueReusableCellWithIdentifier:@"movieCell"];
 
-    MovieModel *model = [self.movies objectAtIndex:indexPath.row];
+    MovieModel *model = [self.filteredMovies objectAtIndex:indexPath.row];
     cell.model = model;
     [cell reloadData];
 
@@ -211,13 +216,13 @@ UIRefreshControl *refreshControl;
 
 #pragma mark collection view data source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.movies.count;
+    return self.filteredMovies.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MovieCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"movieCollCell" forIndexPath:indexPath];
 
-    MovieModel *model = [self.movies objectAtIndex:indexPath.item];
+    MovieModel *model = [self.filteredMovies objectAtIndex:indexPath.item];
     cell.model = model;
     [cell reloadData];
     
@@ -228,6 +233,26 @@ UIRefreshControl *refreshControl;
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"show_detail" sender:[collectionView cellForItemAtIndexPath:indexPath]];
+}
+
+#pragma mark search bar delegate
+
+- (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+
+    NSPredicate *matchPredicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        MovieModel *model = evaluatedObject;
+        Boolean matches = NO;
+
+        NSRange range = [model.searchTitle rangeOfString:searchText];
+        if (range.length > 0 && range.location == 0) {
+            matches = YES;
+        }
+
+        return matches;
+    }];
+    self.filteredMovies = [searchText isEqualToString:@""]  ? self.movies : [self.movies filteredArrayUsingPredicate:matchPredicate];
+
+    [self.movieTableView reloadData];
 }
 
 @end

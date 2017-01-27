@@ -20,6 +20,12 @@
         self.posterURL = [NSURL URLWithString:posterUrl];
         NSString *backgroundUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w342%@", dictionary[@"poster_path"] ];
         self.backgroundURL = [NSURL URLWithString:backgroundUrl];
+
+        self.searchTitle = self.movieTitle;
+        self.searchTitle = [self.searchTitle stringByReplacingOccurrencesOfString:@"The " withString:@""];
+        self.searchTitle = [self.searchTitle stringByReplacingOccurrencesOfString:@"An " withString:@""];
+        self.searchTitle = [self.searchTitle stringByReplacingOccurrencesOfString:@"A " withString:@""];
+
     }
 
     return self;
